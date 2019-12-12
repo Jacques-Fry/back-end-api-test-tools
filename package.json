@@ -1,5 +1,5 @@
 {
-  "name": "back-end-test-tools",
+  "name": "back-end-api-test-tools",
   "version": "0.1.0",
   "private": true,
   "scripts": {
