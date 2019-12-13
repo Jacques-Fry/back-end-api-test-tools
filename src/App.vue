@@ -1,28 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Layout>
+      <div class="layout-title" slot="layout-one-title">
+        <MainTabBar />
+      </div>
+      <div class="layout-left" slot="layout-one-left">
+        <vue-scroll></vue-scroll>
+      </div>
+      <div class="layout-right" slot="layout-one-right">
+        <vue-scroll>
+          <Home />
+        </vue-scroll>
+      </div>
+      <div class="layout-foot" slot="layout-one-foot">© 最终解释权归花落泪知雨所有</div>
+    </Layout>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Layout from "components/common/layout/LayoutOne";
+import Home from "views/home/Home";
+import MainTabBar from "components/content/tabbar/MainTabBar";
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    Layout,
+    Home,
+    MainTabBar
   }
-}
+};
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "assets/css/normalize.css";
+</style>
+<style scoped>
+.layout-title,
+.layout-left,
+.layout-right,
+.layout-foot {
+  position: relative;
+  height: 100%;
+}
+.layout-foot {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size: 12px;
 }
 </style>
